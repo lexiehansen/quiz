@@ -33,7 +33,7 @@ var quizContainer = document.getElementById('quiz');
 var submitButton = document.getElementById('submit');
 var myQuestions = [
     {
-        question: "Click the button below when you're ready to begin."
+        question: "Click the button below when you're ready to begin. Good luck!"
     },
     {
       question: "What is Javascript?",
@@ -54,29 +54,29 @@ var myQuestions = [
       correctAnswer: "c"
     },
     {
-      question: "Hello?",
+      question: "Which characters are used to contain an array?",
       answers: {
-        a: "Hi",
-        b: "Hey",
-        c: "Wazzapppp"
+        a: ":)",
+        b: ":(",
+        c: "[]"
       },
       correctAnswer: "c"
     },
         {
-      question: "Hi?",
+      question: "What year was Javascript created?",
       answers: {
-        a: "Hi",
-        b: "Hey",
-        c: "Wazzapppp"
+        a: "10",
+        b: "5991",
+        c: "1995"
       },
       correctAnswer: "c"
     },
             {
-      question: "Hey?",
+      question: "How do you spell Javascript backwards?",
       answers: {
-        a: "Hi",
-        b: "Hey",
-        c: "Wazzapppp"
+        a: "not this one",
+        b: "tjparvscr",
+        c: "tpircsavaj"
       },
       correctAnswer: "c"
     }
