@@ -137,7 +137,7 @@ var startTimer = function () {
 };
 
 function endGame() {
-    var recordName = (prompt("Timed Out! Please refresh and try again."));
+    var recordName = alert("Timed Out! Please refresh and try again.");
     localStorage.setItem(recordName, resultsContainer)
 }
 
