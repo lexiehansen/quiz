@@ -25,17 +25,11 @@ function buildQuiz(){
           );
       }
     );
-
     quizContainer.innerHTML = output.join('');
-}
-
-function showResults(){
-    
 }
 
 // variables
 var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 var myQuestions = [
     {
@@ -85,8 +79,7 @@ var myQuestions = [
         c: "Wazzapppp"
       },
       correctAnswer: "c"
-    },
-
+    }
 ];
 
 buildQuiz();
@@ -95,6 +88,8 @@ var startButton = document.getElementById("start");
 var nextButton = document.getElementById("next");
 var slides = document.querySelectorAll(".slide");
 var currentSlide = 0;
+var time =60;
+var timerScore = document.querySelector("#timer-score");
 
 showSlide(currentSlide);
 
@@ -125,6 +120,27 @@ function showNextSlide() {
     showSlide(currentSlide + 1);
 }
 
-submitButton.addEventListener('click', showResults);
+var ScoreTracker = function () {
+    var timeInterval = setInterval(function() {
+        if (time > 0 ) {
+            timer.textContent = "Time Left: " + time;
+            time--;
+        }
+        else{
+            endGame();
+        }
+    }, 1000);
+};
+
+var startTimer = function () {
+    ScoreTracker();
+};
+
+function endGame() {
+    var recordName = (prompt("Timed Out! Please refresh and try again."));
+    localStorage.setItem(recordName, resultsContainer)
+}
+
 nextButton.addEventListener("click", showNextSlide);
+startButton.addEventListener("click", startTimer);
 startButton.addEventListener("click", showNextSlide);
